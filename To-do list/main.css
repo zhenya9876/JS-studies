@@ -1,0 +1,100 @@
+body{
+    font-family: "Roboto Medium";
+}
+
+.container{
+    width: 40%;
+    margin: 8vh auto;
+}
+
+.input-container{
+    height: 54px;
+    position: relative;
+}
+
+#input-task{
+    height: 50%;
+    margin: 0;
+    width: 60%;
+    border-style: none none solid none;
+    border-color: #224;
+    font-size: 1.25em;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#input-task:active{
+    border-color: #224;
+}
+
+#add-task-button{
+    font-size: 1.25em;
+    color: white;
+    float: right;
+    height: 100%;
+    max-width: 33%;
+    padding: 2% 5%;
+    border-radius: 16px;
+    background-color: lightgray;
+    border-style: none;
+
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+}
+#add-task-button:hover {
+    background-color: #DCDCDC;
+}
+
+#add-task-button:active {
+    background-color: #BABABA;
+}
+#task-list{
+    padding: 0;
+}
+
+.task-container{
+    list-style-type: none;
+    position: relative;
+    margin: 8px 0;
+    min-height: 32px;
+}
+
+input[type=checkbox]{
+    float: left;
+    position: absolute;
+    top: 45%;
+    transform: translateY(-50%);
+}
+.task{
+    margin-left: 48px;
+    margin-top: 4px;
+    clear: both;
+    display: inline-block;
+    width: 65%;
+}
+.task-checked{
+    text-decoration: line-through;
+}
+
+.delete-btn{
+    /*float: right;*/
+    position: absolute;
+    right: 0;
+    width: 26px;
+    height: 26px;
+    padding: 0;
+    border-style: none;
+    border-radius: 16px;
+    background-size: cover;
+    background: url(cross.png);
+    background-size: 26px;
+}
+.delete-btn:hover {
+    opacity: 0.8;
+}
+.delete-btn:active {
+    opacity: 0.9;
+}
