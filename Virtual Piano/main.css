@@ -18,6 +18,14 @@ kbd {
     box-sizing: border-box;
 }
 
+.white-keys kbd:hover {
+    opacity: 70%;
+}
+
+.black-keys kbd:hover {
+    background-color: #111;
+}
+
 .white-keys kbd {
     margin: 0 auto;
     padding-top: 50vh;

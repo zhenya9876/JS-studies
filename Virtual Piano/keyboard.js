@@ -2,21 +2,40 @@ let kbdsWhite = document.getElementsByClassName("white-keys")[0]
     .getElementsByTagName("kbd");
 let kbdsBlack = document.getElementsByClassName("black-keys")[0]
     .getElementsByTagName("kbd");
+
+let mousePressedKey = '';
+// changing keys in array you can change a keyboard layout
 let keysWhiteArray = ['A','S','D','F','G','H','J'];
 let keysBlackArray = ['W','E','T','Y','U']
 
-for (let i = 0; i < kbdsWhite; i++) {
+for (let i = 0; i < kbdsWhite.length; i++) {
     kbdsWhite[i].innerText = keysWhiteArray[i];
+    kbdsWhite[i].onmousedown = pressKey;
+    kbdsWhite[i].onmouseup = releaseKey;
 }
-for (let i = 0; i < kbdsBlack; i++) {
-    kbdsBlack[i].innerText = keysWhiteArray[i];
+for (let i = 0; i < kbdsBlack.length; i++) {
+    kbdsBlack[i].innerText = keysBlackArray[i];
+    kbdsBlack[i].onmousedown = pressKey;
+    kbdsBlack[i].onmouseup = releaseKey;
 }
 
-document.onkeypress =
+document.onmouseup = releaseKey;
+// document.onmouseup = function () {
+//     for (let kbdsWhiteElement of kbdsWhite) {
+//         kbdsWhiteElement.classList.remove("kbd-active");
+//     }
+//     for (let kbdsBlackElement of kbdsBlack) {
+//         kbdsBlackElement.classList.remove("kbd-active");
+//     }
+// }
+document.onkeypress = pressKey;
 function pressKey(evt) {
-    evt = evt;
     let charCode = evt.keyCode || evt.which;
-    let charStr = String.fromCharCode(charCode).toUpperCase();
+    let charStr;
+    if (charCode == 1) {
+        charStr = evt.target.innerText;
+        mousePressedKey = charStr;}
+    else charStr = String.fromCharCode(charCode).toUpperCase();
     if (keysWhiteArray.includes(charStr) || keysBlackArray.includes(charStr))
     {
         let audioObj;
@@ -75,11 +94,16 @@ function pressKey(evt) {
         console.log("warning");
 }
 
-document.onkeyup =
+document.onkeyup = releaseKey;
     function releaseKey(evt) {
-        evt = evt;
         let charCode = evt.keyCode || evt.which;
-        let charStr = String.fromCharCode(charCode).toUpperCase();
+        let charStr;
+        if (charCode == 1) {
+            if (evt.target.tagName.toLowerCase() != "kbd")
+                charStr = mousePressedKey;
+            else charStr = evt.target.innerText;
+        }
+        else charStr = String.fromCharCode(charCode).toUpperCase();
         if (keysWhiteArray.includes(charStr) || keysBlackArray.includes(charStr)) {
             switch (charStr) {
                 case keysWhiteArray[0]:
@@ -118,6 +142,7 @@ document.onkeyup =
                 case keysBlackArray[4]:
                     kbdsBlack[4].classList.remove("kbd-active");
                     break;
+                if (charCode == 1) mousePressedKey = '';
             }
         }
     }
