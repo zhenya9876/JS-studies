@@ -1,0 +1,20 @@
+body {
+    background-color: #e7cbf5;
+}
+
+.container {
+    width: 70%;
+    margin: 10% auto;
+}
+
+kbd {
+    margin: 0 auto;
+    padding: 50vh 0 2vh 2vh;
+    width: 10.8%;
+    display: inline-block;
+    border-radius: 6px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: #684868;
+    background-color: white;
+}
