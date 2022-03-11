@@ -18,3 +18,9 @@ kbd {
     border-color: #684868;
     background-color: white;
 }
+
+.kbd-active {
+    border-color: #917991;
+    background: linear-gradient(white, #ead8f8);
+    /*background-color: #cebeda;*/
+}
