@@ -26,27 +26,32 @@ body {
     width: 500px;
     bottom: 0;
     height: 100%;
-    overflow: hidden;
 }
 
 .planet {
     position: absolute;
 
     width: 100%;
-    bottom: -66px;
+    bottom: 0px;
     z-index: 2;
-    transform: rotate(15deg);
-    overflow: hidden;
 }
 
 .rocket {
     position: absolute;
-    left: -30px;
+    left: 0px;
     bottom: 200px;
     transform-origin: bottom;
     transform:scale(45%) rotate(30deg);
     z-index: 1;
+    /*overflow: visible;*/
 }
+
+.launched {
+    transition-duration: 3s;
+    transition-timing-function: ease-in;
+    transform:scale(45%) rotate(30deg) translateY(-1000%);
+}
+
 .control-panel{
     position: absolute;
     right: 5vw;
