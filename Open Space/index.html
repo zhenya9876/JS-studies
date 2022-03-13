@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Open Space</title>
     <link href="main.css" rel="stylesheet">
+    <script src="control-panel.js"></script>
 </head>
 <body>
     <div class="space">
@@ -13,8 +14,8 @@
         </div>
         <div class="control-panel">
             <div class="control-panel__inner">
-                <input type="password" value="Enter password">
-                <input type="button" value="OK">
+                <input type="password" value="Enter password" id="passBox">
+                <input type="button" value="OK" id="okBtn">
                 <div class="check-buttons">
                     <input type="checkbox">
                     <input type="checkbox">
@@ -30,7 +31,7 @@
                     <input type="range" class="lever">
                     <input type="range" class="lever">
                 </div>
-                <input type="button" value="Launch">
+                <input type="button" value="Launch" id="launchBtn">
             </div>
         </div>
     </div>

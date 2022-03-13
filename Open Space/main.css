@@ -113,6 +113,11 @@ input[value="Launch"]{
 input[type=button]:hover{
     opacity: 80%;
 }
+input[type=button]:disabled{
+    background: #444;
+    color: #46355d;
+    border-style: none;
+}
 .levers{
     display: flex;
     justify-content: space-between;
