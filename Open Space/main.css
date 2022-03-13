@@ -1,0 +1,99 @@
+html {
+    margin: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    margin: 0px;
+    min-height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+.space {
+    background-image: url("img/space.png");
+    background-size: cover;
+    width: 80%;
+    margin: auto;
+    /*bottom: 0;*/
+    height: 100vh;
+    position: relative;
+}
+
+.planet-area {
+    position: relative;
+    width: 500px;
+    bottom: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.planet {
+    position: absolute;
+
+    width: 100%;
+    bottom: -66px;
+    z-index: 2;
+    transform: rotate(15deg);
+    overflow: hidden;
+}
+
+.rocket {
+    position: absolute;
+    left: -30px;
+    bottom: 200px;
+    transform-origin: bottom;
+    transform:scale(45%) rotate(30deg);
+    z-index: 1;
+}
+
+.control-panel {
+    position: absolute;
+    right: 5vw;
+    bottom: 10vh;
+    width: 40%;
+    background-color: antiquewhite;
+    padding: 20px;
+    border-radius: 20px;
+    z-index: 3;
+    min-width: 290px;
+}
+.check-buttons{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin: 20px auto;
+}
+input[type="checkbox"]{
+    transform: scale(200%);
+}
+input[type="text"]{
+    height: 32px;
+    border-radius: 12px;
+    border-style: none;
+    width: 70%;
+    font-size: 1.2em;
+}
+input[type=button]{
+    font-weight: bold;
+    color: white;
+    padding: 10px;
+    margin-left: 12px;
+    width: 60px;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #433654;
+}
+input[value="launch"]{margin-left: 40%}
+input[type=button]:hover{
+    opacity: 80%;
+}
+.levers{
+    display: flex;
+    justify-content: space-between;
+}
+.lever {
+    transform: rotate(-90deg);
+    margin: 70px -40px;
+}
