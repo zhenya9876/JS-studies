@@ -1,8 +1,10 @@
 var openWindowBtns;
-let windowTitle;
+var windowTitle;
 var windowText;
 var windowCancel;
 var windowPopUp;
+var hamburgerLabel;
+var navMenu;
 window.onload = function (){
     openWindowBtns = document.getElementsByClassName("open-window");
     for (let openWindowBtn of openWindowBtns) {
@@ -12,6 +14,9 @@ window.onload = function (){
     windowText = document.getElementById("windowText");
     windowCancel = document.getElementById("windowCancel");
     windowPopUp = document.getElementsByClassName("window")[0];
+    document.getElementById("menu-checkbox").onchange = showMenu;
+    hamburgerLabel = document.getElementsByClassName("hamburger")[0].getElementsByTagName("label")[0];
+    navMenu = document.getElementById("navMenu");
 }
 
 function showWindow(event) {
@@ -37,4 +42,12 @@ function showWindow(event) {
     windowCancel.onclick = function (){
         windowPopUp.classList.remove("window-opened");
     };
+}
+
+function showMenu(event) {
+    if (event.target.checked) {
+        navMenu.classList.add("menu-open");
+    } else {
+        navMenu.classList.remove("menu-open");
+    }
 }
